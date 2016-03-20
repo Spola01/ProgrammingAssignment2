@@ -1,7 +1,8 @@
 ## These functions create an inverse of a matrix that is used as an input
-## 
+ 
 
-## Write a short comment describing this function
+## This function creates a special matrix list that contains the matrix
+## and the inverse if already calculated
 
 makeCacheMatrix <- function(x = matrix()) {
      inv <- NULL
@@ -16,11 +17,14 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## These functions create an inverse of a matrix that is used as an input
+## This function checks to see if an inverse has been previously calculated for a given special matrix
+## and returns it or if it doesnt exist calculates it
+
+
 cacheSolve <- function(x, ...) {
         inv <- x$getinv()
         if(!is.null(inv)) {
-                message("getting cached data")
+                message("matrix inverse already solved, getting cached calculation")
                 return(inv)
         }
         data <- x$get()
